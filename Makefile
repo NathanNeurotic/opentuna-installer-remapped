@@ -10,16 +10,16 @@ all:
 	$(MAKE) $(EE_BIN_PACKED)
 
 opl_elf.s:
-	bin2s INSTALL/APPS/OPNPS2LD.ELF opl_elf.s opl_elf
+	bin2s INSTALL/BOOT/FMCBD.ELF opl_elf.s opl_elf
 
 ule_elf.s:
-	bin2s INSTALL/APPS/ULE.ELF ule_elf.s ule_elf
+	bin2s INSTALL/BOOT/BOOT.ELF ule_elf.s ule_elf
 
 apps_icn.s:
-	bin2s INSTALL/APPS/tunacan.icn apps_icn.s apps_icn
+	bin2s INSTALL/BOOT/BOOT.icn apps_icn.s apps_icn
 
 apps_sys.s:
-	bin2s INSTALL/APPS/icon.sys apps_sys.s apps_sys
+	bin2s INSTALL/BOOT/icon.sys apps_sys.s apps_sys
 
 OpenTuna_sys.s:
 	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys

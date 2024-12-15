@@ -266,9 +266,8 @@ static int install(int mcport, int icon_variant)
 	{
 		return 3;
 	}
-    
-    sprintf(temp_path,"mc%u:APPS", mcport);
-		DeleteFolder(temp_path);
+   sprintf(temp_path,"mc%u:BOOT", mcport);
+	   DeleteFolder(temp_path);
     sprintf(temp_path,"mc%u:FORTUNA", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:OPENTUNA", mcport);
@@ -285,22 +284,6 @@ static int install(int mcport, int icon_variant)
 		{
 			return 4;
 		}
-		if (file_exists("mc0:/APPS/icon.sys"))
-		{
-			return 5;
-		}
-		if (file_exists("mc0:/APPS/tunacan.icn"))
-		{
-			return 5;
-		}
-		if (file_exists("mc0:/APPS/ULE.ELF"))
-		{
-			return 5;
-		}
-		if (file_exists("mc0:/APPS/OPNPS2LD.ELF"))
-		{
-			return 5;
-		}
 	}
 	else
 	{
@@ -312,26 +295,10 @@ static int install(int mcport, int icon_variant)
 		{
 			return 4;
 		}
-		if (file_exists("mc1:/APPS/icon.sys"))
-		{
-			return 5;
-		}
-		if (file_exists("mc1:/APPS/tunacan.icn"))
-		{
-			return 5;
-		}
-		if (file_exists("mc1:/APPS/ULE.ELF"))
-		{
-			return 5;
-		}
-		if (file_exists("mc1:/APPS/OPNPS2LD.ELF"))
-		{
-			return 5;
-		}
 	}
 	ret = mcMkDir(mcport, 0, "OPENTUNA");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "APPS");
+	ret = mcMkDir(mcport, 0, "BOOT");
 	mcSync(0, NULL, &ret);
 	retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
@@ -361,22 +328,12 @@ static int install(int mcport, int icon_variant)
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
 	}
-	retorno = write_embed(&apps_sys, size_apps_sys, "APPS", "icon.sys", mcport);
+	retorno = write_embed(&ule_elf, size_ule_elf, "BOOT", "BOOT.ELF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&apps_icn, size_apps_icn, "APPS", "tunacan.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&ule_elf, size_ule_elf, "APPS", "ULE.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&opl_elf, size_opl_elf, "APPS", "OPNPS2LD.ELF", mcport);
+	retorno = write_embed(&opl_elf, size_opl_elf, "BOOT", "FMCBD.ELF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
