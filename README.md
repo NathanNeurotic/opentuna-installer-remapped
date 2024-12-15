@@ -9,6 +9,6 @@ This is the OpenTuna installer. This will install OpenTuna hacked icons and APPS
 
 the following folders will be deleted from the memory card to avoid issues:
 
-- `APPS`
+- `BOOT`
 - `FORTUNA`
 - `OPENTUNA`
