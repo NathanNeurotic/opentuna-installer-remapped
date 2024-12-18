@@ -42,16 +42,16 @@ config_ini.s:
 	bin2s INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
 
 OpenTuna_sys.s:
-	bin2c INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
+	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
 
 OpenTuna_SLIMS.s:
-	bin2c INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.s opentuna_slims
+	bin2s INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.s opentuna_slims
 
 OpenTuna_FAT-110-120-150-160.s:
-	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.s opentuna_fats
+	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.s opentuna_fats
 
 OpenTuna_FAT-170.s:
-	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
+	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
 
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
 	bin2c $(PS2SDK)/iop/irx/freesio2.irx SIO2MAN_irx.c SIO2MAN_irx
