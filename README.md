@@ -15,10 +15,8 @@ This modified OpenTuna-Installer-for-UMCS will install the following folders and
 - `BOOT/del.icn` as BOOT Folder Delete Icon
 - `BOOT/icon.sys` as BOOT Folder Icon Data
 - `title.cfg` as OPL listing and other documentation data
-  
 - `OPENTUNA/icon.icn` as OpenTuna Exploit Icon (Invisible)
 - `OPENTUNA/icon.sys` as OpenTuna Exploit Icon Data
-
 - `SYS-CONF/FMCB_CFG.ELF` as FreeMCBoot Configurator for FMCB and FMCBD
 - `SYS-CONF/endvdpl.irx`
 - `SYS-CONF/copy.icn` as SYS-CONF Folder Copy Icon
@@ -32,6 +30,7 @@ This modified OpenTuna-Installer-for-UMCS will install the following folders and
 - `SYS-CONF/title.cfg` as OPL listing and other documentation data
 - `SYS-CONF/USBD.IRX` as BDM Assault for exFAT USB compatibility on FMCB/D
 - `SYS-CONF/USBHDFSD.IRX` as BDM Assault for exFAT USB compatibility on FMCB/D
+
 
 # OpenTuna installer
 
