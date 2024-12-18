@@ -80,8 +80,8 @@ extern int size_boot2_elf;
 extern u8 boot_icn[];
 extern int size_boot_icn;
 //----------------------------------------//
-extern u8 boot_sys[];
-extern int size_boot_sys;
+extern u8 icon_sys[];
+extern int size_icon_sys;
 //----------------------------------------//
 extern u8 copy_icn[];
 extern int size_copy_icn;
@@ -360,7 +360,7 @@ static int install(int mcport, int icon_variant)
     {
         return 6;
     }
-    retorno = write_embed(&boot_sys, size_boot_sys, "BOOT", "icon.sys", mcport);
+    retorno = write_embed(&icon_sys, size_icon_sys, "BOOT", "icon.sys", mcport);
     if (retorno < 0)
     {
         return 6;
