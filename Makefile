@@ -9,37 +9,37 @@ EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 all:
 	$(MAKE) $(EE_BIN_PACKED)
 launchelf_cnf.s:
-	bin2c INSTALL/BOOT/LAUNCHELF.CNF launchelf_cnf.s launchelf_cnf
+	bin2s INSTALL/BOOT/LAUNCHELF.CNF launchelf_cnf.s launchelf_cnf
 
 ipconfig_dat.s:
-	bin2c INSTALL/BOOT/IPCONFIG.DAT ipconfig_dat.s ipconfig_dat
+	bin2s INSTALL/BOOT/IPCONFIG.DAT ipconfig_dat.s ipconfig_dat
 
 esr_elf.s:
-	bin2c INSTALL/BOOT/ESR.ELF esr_elf.s esr_elf
+	bin2s INSTALL/BOOT/ESR.ELF esr_elf.s esr_elf
 
 fmcbd_elf.s:
-	bin2c INSTALL/BOOT/FMCBD.ELF fmcbd_elf.s fmcbd_elf
+	bin2s INSTALL/BOOT/FMCBD.ELF fmcbd_elf.s fmcbd_elf
 
 boot2_elf.s:
-	bin2c INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
+	bin2s INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
 
 boot_elf.s:
-	bin2c INSTALL/BOOT/BOOT.ELF boot_elf.s boot_elf
+	bin2s INSTALL/BOOT/BOOT.ELF boot_elf.s boot_elf
 
 boot_sys.s:
-	bin2c INSTALL/BOOT/BOOT.SYS boot_sys.s boot_sys
+	bin2s INSTALL/BOOT/BOOT.SYS boot_sys.s boot_sys
 
 copy_icn.s:
-	bin2c INSTALL/BOOT/COPY.ICN copy_icn.s copy_icn
+	bin2s INSTALL/BOOT/COPY.ICN copy_icn.s copy_icn
 
 del_icn.s:
-	bin2c INSTALL/BOOT/DEL.ICN del_icn.s del_icn
+	bin2s INSTALL/BOOT/DEL.ICN del_icn.s del_icn
 
 boot_icn.s:
-	bin2c INSTALL/BOOT/BOOT.ICN boot_icn.s boot_icn
+	bin2s INSTALL/BOOT/BOOT.ICN boot_icn.s boot_icn
 
 config_ini.s:
-	bin2c INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
+	bin2s INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
 
 OpenTuna_sys.s:
 	bin2c INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
