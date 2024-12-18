@@ -9,49 +9,49 @@ EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 all:
 	$(MAKE) $(EE_BIN_PACKED)
 launchelf_cnf.s:
-	bin2s INSTALL/BOOT/LAUNCHELF.CNF launchelf_cnf.s launchelf_cnf
+	bin2c INSTALL/BOOT/LAUNCHELF.CNF launchelf_cnf.s launchelf_cnf
 
 ipconfig_dat.s:
-	bin2s INSTALL/BOOT/IPCONFIG.DAT ipconfig_dat.s ipconfig_dat
+	bin2c INSTALL/BOOT/IPCONFIG.DAT ipconfig_dat.s ipconfig_dat
 
 esr_elf.s:
-	bin2s INSTALL/BOOT/ESR.ELF esr_elf.s esr_elf
+	bin2c INSTALL/BOOT/ESR.ELF esr_elf.s esr_elf
 
 fmcbd_elf.s:
-	bin2s INSTALL/BOOT/FMCBD.ELF fmcbd_elf.s fmcbd_elf
+	bin2c INSTALL/BOOT/FMCBD.ELF fmcbd_elf.s fmcbd_elf
 
 boot2_elf.s:
-	bin2s INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
+	bin2c INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
 
 boot_elf.s:
-	bin2s INSTALL/BOOT/BOOT.ELF boot_elf.s boot_elf
+	bin2c INSTALL/BOOT/BOOT.ELF boot_elf.s boot_elf
 
 boot_sys.s:
-	bin2s INSTALL/BOOT/BOOT.SYS boot_sys.s boot_sys
+	bin2c INSTALL/BOOT/BOOT.SYS boot_sys.s boot_sys
 
 copy_icn.s:
-	bin2s INSTALL/BOOT/COPY.ICN copy_icn.s copy_icn
+	bin2c INSTALL/BOOT/COPY.ICN copy_icn.s copy_icn
 
 del_icn.s:
-	bin2s INSTALL/BOOT/DEL.ICN del_icn.s del_icn
+	bin2c INSTALL/BOOT/DEL.ICN del_icn.s del_icn
 
 boot_icn.s:
-	bin2s INSTALL/BOOT/BOOT.ICN boot_icn.s boot_icn
+	bin2c INSTALL/BOOT/BOOT.ICN boot_icn.s boot_icn
 
 config_ini.s:
-	bin2s INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
+	bin2c INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
 
 OpenTuna_sys.s:
-	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
+	bin2c INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
 
 OpenTuna_SLIMS.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.s opentuna_slims
+	bin2c INSTALL/OPENTUNA/OpenTuna_Slims.bin OpenTuna_SLIMS.s opentuna_slims
 
 OpenTuna_FAT-110-120-150-160.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.s opentuna_fats
+	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-110-120-150-160.bin OpenTuna_FAT-110-120-150-160.s opentuna_fats
 
 OpenTuna_FAT-170.s:
-	bin2s INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
+	bin2c INSTALL/OPENTUNA/OpenTuna_FAT-170.bin OpenTuna_FAT-170.s opentuna_fat170
 
 SIO2MAN_irx.c: $(PS2SDK)/iop/irx/freesio2.irx
 	bin2c $(PS2SDK)/iop/irx/freesio2.irx SIO2MAN_irx.c SIO2MAN_irx
