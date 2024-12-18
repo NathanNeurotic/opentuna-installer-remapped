@@ -2,24 +2,44 @@ EE_BIN = Installer.elf
 EE_BIN_PACKED = OpenTuna_Installer.elf
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
-EE_OBJS += opl_elf.o ule_elf.o apps_icn.o apps_sys.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-120-150-160.o PADMAN_irx.o SIO2MAN_irx.o MCMAN_irx.o MCSERV_irx.o
-EE_SRC =   opl_elf.s ule_elf.s apps_icn.s apps_sys.s OpenTuna_sys.s  OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c
+EE_OBJS += launchelf_cnf.o ipconfig_dat.o esr_elf.o fmcbd_elf.o boot2_elf.o boot_elf.o boot_sys.o copy_icn.o del_icn.o boot_icn.o config_ini.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-120-150-160.o PADMAN_irx.o SIO2MAN_irx.o MCMAN_irx.o MCSERV_irx.o
+EE_SRC =   launchelf_cnf.s ipconfig_dat.s esr_elf.s fmcbd_elf.s boot2_elf.s boot_elf.s boot_sys.s copy_icn.s del_icn.s boot_icn.s config_ini.s OpenTuna_sys.s  OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
 	$(MAKE) $(EE_BIN_PACKED)
+launchelf_cnf.s:
+	bin2s INSTALL/BOOT/LAUNCHELF.CNF launchelf_cnf.s launchelf_cnf
 
-opl_elf.s:
-	bin2s INSTALL/BOOT/FMCBD.ELF opl_elf.s opl_elf
+ipconfig_dat.s:
+	bin2s INSTALL/BOOT/IPCONFIG.DAT ipconfig_dat.s ipconfig_dat
 
-ule_elf.s:
-	bin2s INSTALL/BOOT/BOOT.ELF ule_elf.s ule_elf
+esr_elf.s:
+	bin2s INSTALL/BOOT/ESR.ELF esr_elf.s esr_elf
 
-apps_icn.s:
-	bin2s INSTALL/BOOT/BOOT.icn apps_icn.s apps_icn
+fmcbd_elf.s:
+	bin2s INSTALL/BOOT/FMCBD.ELF fmcbd_elf.s fmcbd_elf
 
-apps_sys.s:
-	bin2s INSTALL/BOOT/icon.sys apps_sys.s apps_sys
+boot2_elf.s:
+	bin2s INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
+
+boot_elf.s:
+	bin2s INSTALL/BOOT/BOOT.ELF boot_elf.s boot_elf
+
+boot_sys.s:
+	bin2s INSTALL/BOOT/BOOT.SYS boot_sys.s boot_sys
+
+copy_icn.s:
+	bin2s INSTALL/BOOT/COPY.ICN copy_icn.s copy_icn
+
+del_icn.s:
+	bin2s INSTALL/BOOT/DEL.ICN del_icn.s del_icn
+
+boot_icn.s:
+	bin2s INSTALL/BOOT/BOOT.ICN boot_icn.s boot_icn
+
+config_ini.s:
+	bin2s INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
 
 OpenTuna_sys.s:
 	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
