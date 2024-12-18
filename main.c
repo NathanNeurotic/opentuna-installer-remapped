@@ -71,17 +71,29 @@ extern int size_opentuna_fat170;
 extern u8 opentuna_sys[];
 extern int size_opentuna_sys;
 //----------------------------------------//
-extern u8 opl_elf[];
-extern int size_opl_elf;
+extern u8 fmcbd_elf[];
+extern int size_fmcbd_elf;
 //----------------------------------------//
-extern u8 ule_elf[];
-extern int size_ule_elf;
+extern u8 boot2_elf[];
+extern int size_boot2_elf;
 //----------------------------------------//
-extern u8 apps_icn[];
-extern int size_apps_icn;
+extern u8 boot_icn[];
+extern int size_boot_icn;
 //----------------------------------------//
-extern u8 apps_sys[];
-extern int size_apps_sys;
+extern u8 boot_sys[];
+extern int size_boot_sys;
+//----------------------------------------//
+extern u8 copy_icn[];
+extern int size_copy_icn;
+//----------------------------------------//
+extern u8 del_icn[];
+extern int size_del_icn;
+//----------------------------------------//
+extern u8 config_ini[];
+extern int size_config_ini;
+//----------------------------------------//
+extern u8 boot_elf[];
+extern int size_boot_elf;
 
 // Embedded IOP drivers
 extern unsigned char SIO2MAN_irx[];
@@ -328,12 +340,37 @@ static int install(int mcport, int icon_variant)
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
 	}
-	retorno = write_embed(&ule_elf, size_ule_elf, "BOOT", "BOOT.ELF", mcport);
+	retorno = write_embed(&boot_elf, size_boot_elf, "BOOT", "BOOT.ELF", mcport);
 	if (retorno < 0)
 	{
 		return 6;
 	}
-	retorno = write_embed(&opl_elf, size_opl_elf, "BOOT", "FMCBD.ELF", mcport);
+	retorno = write_embed(&boot2_elf, size_boot2_elf, "BOOT", "BOOT2.ELF", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+    }
+	retorno = write_embed(&boot_icn, size_boot_sys, "BOOT", "icon.sys", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "BOOT", "FMCBD.ELF", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&copy_icn, size_copy_icn, "BOOT", "copy.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&del_icn, size_del_icn, "BOOT", "del.icn", mcport);
+	if (retorno < 0)
+	{
+		return 6;
+	}
+	retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "BOOT.icn", mcport);
 	if (retorno < 0)
 	{
 		return 6;
