@@ -94,6 +94,16 @@ extern int size_config_ini;
 //----------------------------------------//
 extern u8 boot_elf[];
 extern int size_boot_elf;
+//----------------------------------------//
+extern u8 launchelf_cnf[];
+extern int size_launchelf_cnf;
+//----------------------------------------//
+extern u8 esr_elf[];
+extern int size_esr_elf;
+//----------------------------------------//
+extern u8 ipconfig_dat[];
+extern int size_ipconfig_dat;
+//----------------------------------------//
 
 // Embedded IOP drivers
 extern unsigned char SIO2MAN_irx[];
@@ -340,40 +350,60 @@ static int install(int mcport, int icon_variant)
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
 	}
-	retorno = write_embed(&boot_elf, size_boot_elf, "BOOT", "BOOT.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&boot2_elf, size_boot2_elf, "BOOT", "BOOT2.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
+	    retorno = write_embed(&boot_elf, size_boot_elf, "BOOT", "BOOT.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
     }
-	retorno = write_embed(&boot_icn, size_boot_sys, "BOOT", "icon.sys", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "BOOT", "FMCBD.ELF", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&copy_icn, size_copy_icn, "BOOT", "copy.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&del_icn, size_del_icn, "BOOT", "del.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
-	}
-	retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "BOOT.icn", mcport);
-	if (retorno < 0)
-	{
-		return 6;
+    retorno = write_embed(&boot2_elf, size_boot2_elf, "BOOT", "BOOT2.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&boot_sys, size_boot_sys, "BOOT", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "BOOT", "FMCBD.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&copy_icn, size_copy_icn, "BOOT", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&del_icn, size_del_icn, "BOOT", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "BOOT.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&launchelf_cnf, size_launchelf_cnf, "BOOT", "LAUNCHELF.CNF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "ESR.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&ipconfig_dat, size_ipconfig_dat, "BOOT", "IPCONFIG.DAT", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&config_ini, size_config_ini, "BOOT", "CONFIG.INI", mcport);
+    if (retorno < 0)
+    {
+        return 6;
 	}
 
 	PRINTF("installation finished\n");
