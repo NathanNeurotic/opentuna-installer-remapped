@@ -2,8 +2,10 @@ EE_BIN = Installer.elf
 EE_BIN_PACKED = OpenTuna_Installer.elf
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
-EE_OBJS += launchelf_cnf.o ipconfig_dat.o esr_elf.o fmcbd_elf.o boot2_elf.o boot_elf.o icon_sys.o copy_icn.o del_icn.o boot_icn.o config_ini.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-120-150-160.o PADMAN_irx.o SIO2MAN_irx.o MCMAN_irx.o MCSERV_irx.o
-EE_SRC =   launchelf_cnf.s ipconfig_dat.s esr_elf.s fmcbd_elf.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s boot_icn.s config_ini.s OpenTuna_sys.s  OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c
+EE_OBJS += launchelf_cnf.o ipconfig_dat.o esr_elf.o fmcbd_elf.o boot2_elf.o boot_elf.o icon_sys.o copy_icn.o del_icn.o boot_icn.o config_ini.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-120-150-160.o PADMAN_irx.o SIO2MAN_irx.o MCMAN_irx.o MCSERV_irx.o \
+           sysconf_FMCB_CFG.o sysconf_FREEMCB.o sysconf_IPCONFIG.o sysconf_LAUNCHELF.o sysconf_PS2BBL.o sysconf_USBD.o sysconf_USBHDFSD.o sysconf_copy_icn.o sysconf_del_icn.o sysconf_endvdpl.o sysconf_icon_sys.o sysconf_sysconf_icn.o sysconf_title_cfg.o
+EE_SRC = launchelf_cnf.s ipconfig_dat.s esr_elf.s fmcbd_elf.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s boot_icn.s config_ini.s OpenTuna_sys.s  OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c \
+           sysconf_FMCB_CFG.s sysconf_FREEMCB.s sysconf_IPCONFIG.s sysconf_LAUNCHELF.s sysconf_PS2BBL.s sysconf_USBD.s sysconf_USBHDFSD.s sysconf_copy_icn.s sysconf_del_icn.s sysconf_endvdpl.s sysconf_icon_sys.s sysconf_sysconf_icn.s sysconf_title_cfg.s
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
 all:
@@ -40,6 +42,45 @@ boot_icn.s:
 
 config_ini.s:
 	bin2s INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
+
+sysconf_FMCB_CFG.s:
+	bin2s INSTALL/SYS-CONF/FMCB_CFG.ELF sysconf_FMCB_CFG.s sysconf_FMCB_CFG
+
+sysconf_FREEMCB.s:
+	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sysconf_FREEMCB.s sysconf_FREEMCB
+
+sysconf_IPCONFIG.s:
+	bin2s INSTALL/SYS-CONF/IPCONFIG.DAT sysconf_IPCONFIG.s sysconf_IPCONFIG
+
+sysconf_LAUNCHELF.s:
+	bin2s INSTALL/SYS-CONF/LAUNCHELF.CNF sysconf_LAUNCHELF.s sysconf_LAUNCHELF
+
+sysconf_PS2BBL.s:
+	bin2s INSTALL/SYS-CONF/PS2BBL.INI sysconf_PS2BBL.s sysconf_PS2BBL
+
+sysconf_USBD.s:
+	bin2s INSTALL/SYS-CONF/USBD.IRX sysconf_USBD.s sysconf_USBD
+
+sysconf_USBHDFSD.s:
+	bin2s INSTALL/SYS-CONF/USBHDFSD.IRX sysconf_USBHDFSD.s sysconf_USBHDFSD
+
+sysconf_copy_icn.s:
+	bin2s INSTALL/SYS-CONF/COPY.ICN sysconf_copy_icn.s sysconf_copy_icn
+
+sysconf_del_icn.s:
+	bin2s INSTALL/SYS-CONF/DEL.ICN sysconf_del_icn.s sysconf_del_icn
+
+sysconf_endvdpl.s:
+	bin2s INSTALL/SYS-CONF/ENDVDPL.IRX sysconf_endvdpl.s sysconf_endvdpl
+
+sysconf_icon_sys.s:
+	bin2s INSTALL/SYS-CONF/ICON.SYS sysconf_icon_sys.s sysconf_icon_sys
+
+sysconf_sysconf_icn.s:
+	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sysconf_sysconf_icn.s sysconf_sysconf_icn
+
+sysconf_title_cfg.s:
+	bin2s INSTALL/SYS-CONF/TITLE.CFG sysconf_title_cfg.s sysconf_title_cfg
 
 OpenTuna_sys.s:
 	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
