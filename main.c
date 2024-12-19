@@ -479,7 +479,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&sysconfps2bbl_ini, size_sysconf_ps2bbl_ini, "SYS-CONF", "PS2BBL.INI", mcport);
+    retorno = write_embed(&sysconfps2bbl_ini, size_sysconfps2bbl_ini, "SYS-CONF", "PS2BBL.INI", mcport);
     if (retorno < 0)
     {
         return 6;
