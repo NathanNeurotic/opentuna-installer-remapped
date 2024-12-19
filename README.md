@@ -1,4 +1,11 @@
-# OpenTuna installer Mod
+# OpenTuna Installer Remapped Mod
+* FMCB w/PS2BBL for any Tuna, FMCB, PS2BBL, or FHDB user. `OpenTuna will not work on HDDOSD/Browser 2.0`
+* Should be compatible with modchips and pretty much anything after model SCPH-18000
+* If you need a place to start, check out [FreeDVDBoot](), [PFS-BatchKit-Manager](), [PS2HDH](), or [HDL-Batch-Installer]() for ways to get access to wLaunchELF to run OpenTuna-Installer-Remapped Mod.
+* You can also use devices like [PSXMC2](), [SD2PSX](), or [MCP2]() to download a memory card exploit vmc directly to their microSD card for access to wLaunchELF.
+* Once you're in wLaunchELF, you'll be able to access a USB storage devices/internal storage device/MX4SIO storage device depending on your setup and access the downloaded OpenTuna Installer Remapped ELF to begin installation.
+* Read the entire readme for clarity on what gets removed, what will change on any preconfigured settings, and what to expect.
+* 2MB Free Space on your Memory Card is recommended before running the installer.
 ---------------------------------
 Modified Original Readme to reflect additional folder deletion and recommended backup before proceeding.
 This modified OpenTuna-Installer will install the following folders and files to the selected memory card:
@@ -42,7 +49,7 @@ This means if you have applications mapped with those programs, you will need to
 
 ##### note:
 
-the following folders will be deleted from the memory card during install to avoid issues, it is recommended to backup these folders if they exist incase you decide to revert to your previous setup.
+the following folders will be deleted from the memory card during install to avoid issues, it is recommended to backup these folders if they exist incase you decide to revert to your previous setup. Remember when doing so, to `copy` the folder and `psupaste` it to your chosen storage device. To restore your backups, you would `psupaste` the `.psu` files from your storage device back to memory card. This shouldn't be necessary, but this is how you would do it.
 
 - `BOOT`
 - `SYS-CONF`
