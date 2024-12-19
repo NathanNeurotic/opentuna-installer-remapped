@@ -1,8 +1,8 @@
 # OpenTuna Installer Remapped Mod
 * FMCB w/PS2BBL for any Tuna, FMCB, PS2BBL, or FHDB user. `OpenTuna will not work on HDDOSD/Browser 2.0`
 * Should be compatible with modchips and pretty much anything after model SCPH-18000
-* If you need a place to start, check out [FreeDVDBoot](), [PFS-BatchKit-Manager](), [PS2HDH](), or [HDL-Batch-Installer]() for ways to get access to wLaunchELF to run OpenTuna-Installer-Remapped Mod.
-* You can also use devices like [PSXMC2](), [SD2PSX](), or [MCP2]() to download a memory card exploit vmc directly to their microSD card for access to wLaunchELF.
+* If you need a place to start, check out [FreeDVDBoot](https://github.com/ps2homebrew/FreeDVDBoot), [PFS-BatchKit-Manager](https://github.com/GDX-X/PFS-BatchKit-Manager), [PS2HDH](https://www.psx-place.com/resources/ps2-hdd-decryption-helper.1507/), or [HDL-Batch-Installer](https://github.com/israpps/HDL-Batch-installer) for ways to get access to wLaunchELF to run OpenTuna-Installer-Remapped Mod.
+* You can also use devices like [PSXMC2](https://www.bitfunx.com/product/psxmemcard-gen2-memory-card-for-playstation1-ps-one-playstation2-game-consoles/), [SD2PSX](https://sd2psx.net/ps2-exploit.html), or [MCP2](https://qrco.de/bdiiDa) to download a memory card exploit vmc directly to their microSD card for access to wLaunchELF.
 * Once you're in wLaunchELF, you'll be able to access a USB storage devices/internal storage device/MX4SIO storage device depending on your setup and access the downloaded OpenTuna Installer Remapped ELF to begin installation.
 * Read the entire readme for clarity on what gets removed, what will change on any preconfigured settings, and what to expect.
 * 2MB Free Space on your Memory Card is recommended before running the installer.
@@ -13,8 +13,8 @@ This modified OpenTuna-Installer will install the following folders and files to
 - `BOOT/BOOT.ELF` as [PS2BBL](https://israpps.github.io/PlayStation2-Basic-BootLoader/)
 - `BOOT/BOOT2.ELF` as [wLaunchELF from WoonYoung's Official FMCB Installer](https://sites.google.com/view/ysai187/home/projects/fmcbfhdb#h.p_e31_CKrrgS5f)
 - `BOOT/FMCBD.ELF` as [FreeMCBoot 1.966 Decrypted](https://github.com/israpps/FreeMcBoot-Installer/tree/master/Decrypted_FreeMcBoot)
-- `BOOT/CONFIG.INI` as BOOT.ELF's wLE configuration
-- `BOOT/LAUNCHELF.CNF` as BOOT2.ELF's PS2BBL configuration
+- `BOOT/CONFIG.INI` as BOOT.ELF's PS2BBL configuration
+- `BOOT/LAUNCHELF.CNF` as BOOT2.ELF's wLE configuration
 - `BOOT/IPCONFIG.DAT` as BOOT2.ELF's wLE Network settings
 - `BOOT/ESR.ELF` as [ESR for FMCBD and FMCB for ESR Patched Discs](https://www.psx-place.com/threads/esr.30217/)
 - `BOOT/BOOT.icn` as BOOT Folder Icon
