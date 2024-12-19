@@ -47,7 +47,7 @@ sysconffmcb_cfg_elf.s:
 	bin2s INSTALL/SYS-CONF/FMCB_CFG.ELF sysconffmcb_cfg_elf.s sysconffmcb_cfg_elf
 
 sysconffreemcb_cnf.s:
-	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sysconffreemcb.cnf.s sysconffreemcb_cnf
+	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sysconffreemcb_cnf.s sysconffreemcb_cnf
 
 sysconfipconfig_dat.s:
 	bin2s INSTALL/SYS-CONF/IPCONFIG.DAT sysconfipconfig_dat.s sysconipconfig_day
