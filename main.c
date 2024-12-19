@@ -104,44 +104,44 @@ extern int size_esr_elf;
 extern u8 ipconfig_dat[];
 extern int size_ipconfig_dat;
 //----------------------------------------//
-extern u8 sysconf_fmcb_cfg[];
-extern int size_sysconf_fmcb_cfg;
+extern u8 sysconffmcb_cfg_elf[];
+extern int size_sysconffmcb_cfg_elf;
 //----------------------------------------//
-extern u8 sysconf_freemcb[];
-extern int size_sysconf_freemcb;
+extern u8 sysconffreemcb_cnf[];
+extern int size_sysconffreemcb_cnf;
 //----------------------------------------//
-extern u8 sysconf_ipconfig[];
-extern int size_sysconf_ipconfig;
+extern u8 sysconfipconfig_dat[];
+extern int size_sysconfipconfig_dat;
 //----------------------------------------//
-extern u8 sysconf_launchelf[];
-extern int size_sysconf_launchelf;
+extern u8 sysconflaunchelf_cnf[];
+extern int size_sysconflaunchelf_cnf;
 //----------------------------------------//
-extern u8 sysconf_ps2bbl[];
-extern int size_sysconf_ps2bbl;
+extern u8 sysconfps2bbl_ini[];
+extern int size_sysconfps2bbl_ini;
 //----------------------------------------//
-extern u8 sysconf_usbd[];
-extern int size_sysconf_usbd;
+extern u8 sysconfusbd_irx[];
+extern int size_sysconfusbd_irx;
 //----------------------------------------//
-extern u8 sysconf_usbhdfsd[];
-extern int size_sysconf_usbhdfsd;
+extern u8 sysconfusbhdfsd_irx[];
+extern int size_sysconfusbhdfsd_irx;
 //----------------------------------------//
-extern u8 sysconf_copy_icn[];
-extern int size_sysconf_copy_icn;
+extern u8 sysconfcopy_icn[];
+extern int size_sysconfcopy_icn;
 //----------------------------------------//
-extern u8 sysconf_del_icn[];
-extern int size_sysconf_del_icn;
+extern u8 sysconfdel_icn[];
+extern int size_sysconfdel_icn;
 //----------------------------------------//
-extern u8 sysconf_endvdpl[];
-extern int size_sysconf_endvdpl;
+extern u8 sysconfendvdpl_irx[];
+extern int size_sysconfendvdpl_irx;
 //----------------------------------------//
-extern u8 sysconf_icon_sys[];
-extern int size_sysconf_icon_sys;
+extern u8 sysconficon_sys[];
+extern int size_sysconficon_sys;
 //----------------------------------------//
-extern u8 sysconf_sysconf_icn[];
-extern int size_sysconf_sysconf_icn;
+extern u8 sysconfsysconf_icn[];
+extern int size_sysconfsysconf_icn;
 //----------------------------------------//
-extern u8 sysconf_title_cfg[];
-extern int size_sysconf_title_cfg;
+extern u8 sysconftitle_cfg[];
+extern int size_sysconftitle_cfg;
 //----------------------------------------//
 
 // Embedded IOP drivers
@@ -459,67 +459,67 @@ DeleteFolder(temp_path);
         return 6;
     }
     // Adding sysconf items
-    retorno = write_embed(&sysconf_fmcb_cfg, size_sysconf_fmcb_cfg, "SYS-CONF", "FMCB_CFG.ELF", mcport);
+    retorno = write_embed(&sysconffmcb_cfg_elf, size_sysconffmcb_cfg_elf, "SYS-CONF", "FMCB_CFG.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_freemcb, size_sysconf_freemcb, "SYS-CONF", "FREEMCB.CNF", mcport);
+    retorno = write_embed(&sysconffreemcb_cnf, size_sysconffreemcb_cnf, "SYS-CONF", "FREEMCB.CNF", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_ipconfig, size_sysconf_ipconfig, "SYS-CONF", "IPCONFIG.DAT", mcport);
+    retorno = write_embed(&sysconfipconfig_dat, size_sysconfipconfig_dat, "SYS-CONF", "IPCONFIG.DAT", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_launchelf, size_sysconf_launchelf, "SYS-CONF", "LAUNCHELF.CNF", mcport);
+    retorno = write_embed(&sysconflaunchelf_cnf, size_sysconflaunchelf_cnf, "SYS-CONF", "LAUNCHELF.CNF", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_ps2bbl, size_sysconf_ps2bbl, "SYS-CONF", "PS2BBL.INI", mcport);
+    retorno = write_embed(&sysconfps2bbl_ini, sizesysconf_ps2bbl_ini, "SYS-CONF", "PS2BBL.INI", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_usbd, size_sysconf_usbd, "SYS-CONF", "USBD.IRX", mcport);
+    retorno = write_embed(&sysconfusbd_irx, size_sysconfusbd_irx, "SYS-CONF", "USBD.IRX", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_usbhdfsd, size_sysconf_usbhdfsd, "SYS-CONF", "USBHDFSD.IRX", mcport);
+    retorno = write_embed(&sysconfusbhdfsd_irx, size_sysconfusbhdfsd_irx, "SYS-CONF", "USBHDFSD.IRX", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_copy_icn, size_sysconf_copy_icn, "SYS-CONF", "copy.icn", mcport);
+    retorno = write_embed(&sysconfcopy_icn, size_sysconfcopy_icn, "SYS-CONF", "copy.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_del_icn, size_sysconf_del_icn, "SYS-CONF", "del.icn", mcport);
+    retorno = write_embed(&sysconfdel_icn, size_sysconfdel_icn, "SYS-CONF", "del.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_endvdpl, size_sysconf_endvdpl, "SYS-CONF", "endvdpl.irx", mcport);
+    retorno = write_embed(&sysconfendvdpl_irx, size_sysconfendvdpl_irx, "SYS-CONF", "endvdpl.irx", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_icon_sys, size_sysconf_icon_sys, "SYS-CONF", "icon.sys", mcport);
+    retorno = write_embed(&sysconficon_sys, size_sysconficon_sys, "SYS-CONF", "icon.sys", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_sysconf_icn, size_sysconf_sysconf_icn, "SYS-CONF", "sysconf.icn", mcport);
+    retorno = write_embed(&sysconfsysconf_icn, size_sysconfsysconf_icn, "SYS-CONF", "sysconf.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&sysconf_title_cfg, size_sysconf_title_cfg, "SYS-CONF", "title.cfg", mcport);
+    retorno = write_embed(&sysconftitle_cfg, size_sysconftitle_cfg, "SYS-CONF", "title.cfg", mcport);
     if (retorno < 0)
     {
         return 6;
