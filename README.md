@@ -3,21 +3,21 @@
 Modified Original Readme to reflect additional folder deletion and recommended backup before proceeding.
 This modified OpenTuna-Installer will install the following folders and files to the selected memory card:
 
-- `BOOT/BOOT.ELF` as PS2BBL
-- `BOOT/BOOT2.ELF` as wLaunchELF
-- `BOOT/FMCBD.ELF` as FreeMCBoot 1.966 Decrypted
-- `BOOT/CONFIG.INI` as BOOT.ELF's configuration
-- `BOOT/LAUNCHELF.CNF` as BOOT2.ELF's configuration
-- `BOOT/IPCONFIG.DAT` as BOOT2.ELF's Network settings
-- `BOOT/ESR.ELF` as ESR for FMCBD and FMCB for ESR Patched Discs
+- `BOOT/BOOT.ELF` as [PS2BBL](https://israpps.github.io/PlayStation2-Basic-BootLoader/)
+- `BOOT/BOOT2.ELF` as [wLaunchELF from WoonYoung's Official FMCB Installer](https://sites.google.com/view/ysai187/home/projects/fmcbfhdb#h.p_e31_CKrrgS5f)
+- `BOOT/FMCBD.ELF` as [FreeMCBoot 1.966 Decrypted](https://github.com/israpps/FreeMcBoot-Installer/tree/master/Decrypted_FreeMcBoot)
+- `BOOT/CONFIG.INI` as BOOT.ELF's wLE configuration
+- `BOOT/LAUNCHELF.CNF` as BOOT2.ELF's PS2BBL configuration
+- `BOOT/IPCONFIG.DAT` as BOOT2.ELF's wLE Network settings
+- `BOOT/ESR.ELF` as [ESR for FMCBD and FMCB for ESR Patched Discs](https://www.psx-place.com/threads/esr.30217/)
 - `BOOT/BOOT.icn` as BOOT Folder Icon
 - `BOOT/copy.icn` as BOOT Folder Copy Icon
 - `BOOT/del.icn` as BOOT Folder Delete Icon
 - `BOOT/icon.sys` as BOOT Folder Icon Data
 - `title.cfg` as OPL listing and other documentation data
-- `OPENTUNA/icon.icn` as OpenTuna Exploit Icon (Invisible)
-- `OPENTUNA/icon.sys` as OpenTuna Exploit Icon Data
-- `SYS-CONF/FMCB_CFG.ELF` as FreeMCBoot Configurator for FMCB and FMCBD
+- `OPENTUNA/icon.icn` as [OpenTuna Exploit Icon (Invisible Icon displays as Corrupted Data - PART OF EXPLOIT - DO NOT DELETE)](https://www.psx-place.com/resources/fmcb-1-9-for-opentuna.1177/)
+- `OPENTUNA/icon.sys` as [OpenTuna Exploit Icon Data (PART OF EXPLOIT - DO NOT DELETE)](https://www.psx-place.com/resources/fmcb-1-9-for-opentuna.1177/)
+- `SYS-CONF/FMCB_CFG.ELF` as [FreeMCBoot Configurator for FMCB and FMCBD](https://israpps.github.io/FreeMcBoot-Installer/test/8_Downloads.html)
 - `SYS-CONF/endvdpl.irx`
 - `SYS-CONF/copy.icn` as SYS-CONF Folder Copy Icon
 - `SYS-CONF/del.icn` as SYS-CONF Folder Delete Icon
@@ -28,8 +28,8 @@ This modified OpenTuna-Installer will install the following folders and files to
 - `SYS-CONF/PS2BBL.INI` as a PS2BBL Exploit installation's Configuration. Only relevant if user has PS2BBL installed as a system update.
 - `SYS-CONF/sysconf.icn` as SYS-CONF Folder Icon
 - `SYS-CONF/title.cfg` as OPL listing and other documentation data
-- `SYS-CONF/USBD.IRX` as BDM Assault for exFAT USB compatibility on FMCB/D
-- `SYS-CONF/USBHDFSD.IRX` as BDM Assault for exFAT USB compatibility on FMCB/D
+- `SYS-CONF/USBD.IRX` as [BDM Assault for exFAT USB compatibility on FMCB/D](https://github.com/israpps/BDMAssault)
+- `SYS-CONF/USBHDFSD.IRX` as [BDM Assault for exFAT USB compatibility on FMCB/D](https://github.com/israpps/BDMAssault)
 
 
 # OpenTuna installer
