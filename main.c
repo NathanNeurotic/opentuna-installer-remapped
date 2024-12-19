@@ -104,6 +104,45 @@ extern int size_esr_elf;
 extern u8 ipconfig_dat[];
 extern int size_ipconfig_dat;
 //----------------------------------------//
+extern u8 sysconf_fmcb_cfg[];
+extern int size_sysconf_fmcb_cfg;
+//----------------------------------------//
+extern u8 sysconf_freemcb[];
+extern int size_sysconf_freemcb;
+//----------------------------------------//
+extern u8 sysconf_ipconfig[];
+extern int size_sysconf_ipconfig;
+//----------------------------------------//
+extern u8 sysconf_launchelf[];
+extern int size_sysconf_launchelf;
+//----------------------------------------//
+extern u8 sysconf_ps2bbl[];
+extern int size_sysconf_ps2bbl;
+//----------------------------------------//
+extern u8 sysconf_usbd[];
+extern int size_sysconf_usbd;
+//----------------------------------------//
+extern u8 sysconf_usbhdfsd[];
+extern int size_sysconf_usbhdfsd;
+//----------------------------------------//
+extern u8 sysconf_copy_icn[];
+extern int size_sysconf_copy_icn;
+//----------------------------------------//
+extern u8 sysconf_del_icn[];
+extern int size_sysconf_del_icn;
+//----------------------------------------//
+extern u8 sysconf_endvdpl[];
+extern int size_sysconf_endvdpl;
+//----------------------------------------//
+extern u8 sysconf_icon_sys[];
+extern int size_sysconf_icon_sys;
+//----------------------------------------//
+extern u8 sysconf_sysconf_icn[];
+extern int size_sysconf_sysconf_icn;
+//----------------------------------------//
+extern u8 sysconf_title_cfg[];
+extern int size_sysconf_title_cfg;
+//----------------------------------------//
 
 // Embedded IOP drivers
 extern unsigned char SIO2MAN_irx[];
@@ -294,6 +333,18 @@ static int install(int mcport, int icon_variant)
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:OPENTUNA", mcport);
 		DeleteFolder(temp_path);
+    // Delete "SYS-CONF" folder
+sprintf(temp_path, "mc%u:SYS-CONF", mcport);
+DeleteFolder(temp_path);
+// Delete "BXEXEC-FUNTUNA" folder
+sprintf(temp_path, "mc%u:BXEXEC-FUNTUNA", mcport);
+DeleteFolder(temp_path);
+// Delete "FUNTUNA" folder
+sprintf(temp_path, "mc%u:FUNTUNA", mcport);
+DeleteFolder(temp_path);
+// Delete "BXEXEC-OPENTUNA" folder
+sprintf(temp_path, "mc%u:BXEXEC-OPENTUNA", mcport);
+DeleteFolder(temp_path);
     
 	//If the files exists, we have an error:
 	if (mcport == 0)
@@ -319,6 +370,8 @@ static int install(int mcport, int icon_variant)
 		}
 	}
 	ret = mcMkDir(mcport, 0, "OPENTUNA");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "SYS-CONF");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "BOOT");
 	mcSync(0, NULL, &ret);
@@ -404,7 +457,73 @@ static int install(int mcport, int icon_variant)
     if (retorno < 0)
     {
         return 6;
-	}
+    }
+    // Adding sysconf items
+    retorno = write_embed(&sysconf_fmcb_cfg, size_sysconf_fmcb_cfg, "SYS-CONF", "FMCB_CFG.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_freemcb, size_sysconf_freemcb, "SYS-CONF", "FREEMCB.CNF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_ipconfig, size_sysconf_ipconfig, "SYS-CONF", "IPCONFIG.DAT", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_launchelf, size_sysconf_launchelf, "SYS-CONF", "LAUNCHELF.CNF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_ps2bbl, size_sysconf_ps2bbl, "SYS-CONF", "PS2BBL.INI", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_usbd, size_sysconf_usbd, "SYS-CONF", "USBD.IRX", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_usbhdfsd, size_sysconf_usbhdfsd, "SYS-CONF", "USBHDFSD.IRX", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_copy_icn, size_sysconf_copy_icn, "SYS-CONF", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_del_icn, size_sysconf_del_icn, "SYS-CONF", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_endvdpl, size_sysconf_endvdpl, "SYS-CONF", "endvdpl.irx", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_icon_sys, size_sysconf_icon_sys, "SYS-CONF", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_sysconf_icn, size_sysconf_sysconf_icn, "SYS-CONF", "sysconf.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&sysconf_title_cfg, size_sysconf_title_cfg, "SYS-CONF", "title.cfg", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
 
 	PRINTF("installation finished\n");
 
