@@ -50,7 +50,7 @@ sysconffreemcb_cnf.s:
 	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sysconffreemcb_cnf.s sysconffreemcb_cnf
 
 sysconfipconfig_dat.s:
-	bin2s INSTALL/SYS-CONF/IPCONFIG.DAT sysconfipconfig_dat.s sysconipconfig_dat
+	bin2s INSTALL/SYS-CONF/IPCONFIG.DAT sysconfipconfig_dat.s sysconfipconfig_dat
 
 sysconflaunchelf_cnf.s:
 	bin2s INSTALL/SYS-CONF/LAUNCHELF.CNF sysconflaunchelf_cnf.s sysconflaunchelf_cnf
