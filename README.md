@@ -12,7 +12,12 @@ This modified OpenTuna-Installer will install the following folders and files to
 
 - `BOOT/BOOT.ELF` as [PS2BBL](https://israpps.github.io/PlayStation2-Basic-BootLoader/)
 - `BOOT/BOOT2.ELF` as [wLaunchELF from WoonYoung's Official FMCB Installer](https://sites.google.com/view/ysai187/home/projects/fmcbfhdb#h.p_e31_CKrrgS5f)
-- `BOOT/FMCBD.ELF` as [FreeMCBoot 1.966 Decrypted](https://github.com/israpps/FreeMcBoot-Installer/tree/master/Decrypted_FreeMcBoot)
+- `LDR_FMCBD-1.966/FMCBD-1.966.ELF` as [FreeMCBoot 1.966 Decrypted](https://github.com/israpps/FreeMcBoot-Installer/tree/master/Decrypted_FreeMcBoot)
+- `LDR_FMCBD-1.966/FMCB.icn` as LDR_FMCBD-1.966 Folder Icon
+- `LDR_FMCBD-1.966/del.icn` as LDR_FMCBD-1.966 Folder Delete Icon
+- `LDR_FMCBD-1.966/copy.icn` as LDR_FMCBD-1.966 Folder Copy Icon
+- `LDR_FMCBD-1.966/icon.sys` as LDR_FMCBD-1.966 Folder Icon Data
+- `LDR_FMCBD-1.966/title.cfg` as OPL listing information nad metadata.
 - `BOOT/CONFIG.INI` as BOOT.ELF's PS2BBL configuration
 - `BOOT/LAUNCHELF.CNF` as BOOT2.ELF's wLE configuration
 - `BOOT/IPCONFIG.DAT` as BOOT2.ELF's wLE Network settings
@@ -24,15 +29,18 @@ This modified OpenTuna-Installer will install the following folders and files to
 - `title.cfg` as OPL listing and other documentation data
 - `OPENTUNA/icon.icn` as [OpenTuna Exploit Icon (Invisible Icon displays as Corrupted Data - PART OF EXPLOIT - DO NOT DELETE)](https://www.psx-place.com/resources/fmcb-1-9-for-opentuna.1177/)
 - `OPENTUNA/icon.sys` as [OpenTuna Exploit Icon Data (PART OF EXPLOIT - DO NOT DELETE)](https://www.psx-place.com/resources/fmcb-1-9-for-opentuna.1177/)
-- `SYS-CONF/FMCB_CFG.ELF` as [FreeMCBoot Configurator for FMCB and FMCBD](https://israpps.github.io/FreeMcBoot-Installer/test/8_Downloads.html)
+- `SYS_FMCBCFG/FMCBCFG.ELF` as [FreeMCBoot Configurator for FMCB and FMCBD](https://israpps.github.io/FreeMcBoot-Installer/test/8_Downloads.html)
+- `SYS_FMCBCFG/list.icn` as SYS_FMCBCFG Folder Icon
+- `SYS_FMCBCFG/copy.icn` as SYS_FMCBCFG Folder Copy Icon
+- `SYS_FMCBCFG/del.icn` as SYS_FMCBCFG Folder Delete Icon
+- `SYS_FMCBCFG/icon.sys` as SYS_FMCBCFG Folder Icon Data
+- `SYS_FMCBCFG/title.cfg` as OPL Listing and other documentation data
 - `SYS-CONF/endvdpl.irx`
 - `SYS-CONF/copy.icn` as SYS-CONF Folder Copy Icon
 - `SYS-CONF/del.icn` as SYS-CONF Folder Delete Icon
 - `SYS-CONF/FREEMCB.CNF` as FMCB and FMCBD configuration
 - `SYS-CONF/icon.sys` as SYS-CONF Icon Data
 - `SYS-CONF/IPCONFIG.DAT` as default IP settings for many different applications.
-- `SYS-CONF/LAUNCHELF.CNF` as a universal wLaunchELF configuration for wLE apps unaccompanied by a config.
-- `SYS-CONF/PS2BBL.INI` as a PS2BBL Exploit installation's Configuration. Only relevant if user has PS2BBL installed as a system update.
 - `SYS-CONF/sysconf.icn` as SYS-CONF Folder Icon
 - `SYS-CONF/title.cfg` as OPL listing and other documentation data
 - `SYS-CONF/USBD.IRX` as [BDM Assault for exFAT USB compatibility on FMCB/D](https://github.com/israpps/BDMAssault)
@@ -53,6 +61,8 @@ the following folders will be deleted from the memory card during install to avo
 
 - `BOOT`
 - `SYS-CONF`
+- `SYS_FMCBCFG`
+- `LDR_FMCBD-1.966`
 - `BXEXEC-FUNTUNA`
 - `FUNTUNA`
 - `BXEXEC-OPENTUNA`
