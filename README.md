@@ -6,6 +6,7 @@
 * Once you're in wLaunchELF, you'll be able to access a USB storage devices/internal storage device/MX4SIO storage device depending on your setup and access the downloaded OpenTuna Installer Remapped ELF to begin installation.
 * Read the entire readme for clarity on what gets removed, what will change on any preconfigured settings, and what to expect.
 * 2MB Free Space on your Memory Card is recommended before running the installer.
+* Huge thank you to @israpps and @HowlingWolfHWC for explaining and providing me with OpenTuna-BOOT/BOOT.ELF version, allowing for OpenTuna to load BOOT/BOOT.ELF instead of APPS/OPL or otherwise. This allows us to configure BOOT.ELF to launch any app thanks to PS2BBL ELF Application by @israpps
 ---------------------------------
 Modified Original Readme to reflect additional folder deletion and recommended backup before proceeding.
 This modified OpenTuna-Installer will install the following folders and files to the selected memory card:
@@ -49,10 +50,10 @@ This modified OpenTuna-Installer will install the following folders and files to
 
 # OpenTuna installer
 
-This is the OpenTuna installer. This will install OpenTuna hacked icons, SYS-CONF folder, and ~~APPS~~ BOOT folder on PS2 consoles with ROMs ranging from versions 1.10 to 2.30 (2.50?). This means OpenTuna is now compatible with Fat and Slim models from SCPH-18000 up to SCPH-90010 and PS2-TV.
+This is the OpenTuna installer. This will install OpenTuna hacked icons, SYS-CONF folder, SYS_FMCBCFG folder, LDR_FMCBD-1.966 folder and ~~APPS~~ BOOT folder on PS2 consoles with ROMs ranging from versions 1.10 to 2.30 (2.50?). This means OpenTuna is now compatible with Fat and Slim models from SCPH-18000 up to SCPH-90010 and PS2-TV.
 
 This installer will not remove System Update Exploits (FHDB, FMCB, PS2BBL) but it will reconfigure them to a unified FMCB experience across exploits and models.
-This means if you have applications mapped with those programs, you will need to re-add them to the CNF or INI respectively. (FreeMCBoot Configurator if you don't know what I'm referencing)
+This means if you have applications mapped with those programs, you will need to re-add them to the CNF or INI respectively. (FreeMCBoot Configurator if you don't know what I'm referencing or text edit BOOT/CONFIG.INI with wLaunchELF's MISC/Text Editor to adjust BOOT.ELF's auto launch and launch keys.)
 
 
 ##### note:
