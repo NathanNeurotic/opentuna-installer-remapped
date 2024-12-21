@@ -34,8 +34,8 @@ jobs:
           path: OpenTuna_Installer.elf
 
       - name: Create release
-        if: github.ref == 'refs/heads/main'
-        uses: marvinpinto/action-automatic-releases@latest
+        if: github.ref == 'refs/heads/OpenTuna-Standalone-Installer'
+        uses: marvinpinto/action-automatic-releases@standalone
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "standalone"
