@@ -146,8 +146,8 @@ extern int size_sysconftitle_cfg;
 extern u8 title_cfg[];
 extern int size_title_cfg;
 //----------------------------------------//
-extern u8 ldrfmcbdctitle_cfg[];
-extern int size_ldrfmcbdctitle_cfg;
+extern u8 ldrfmcbdtitle_cfg[];
+extern int size_ldrfmcbdtitle_cfg;
 //----------------------------------------//
 extern u8 ldrfmcbdicon_sys[];
 extern int size_ldrfmcbdicon_sys;
@@ -565,7 +565,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdctitle_cfg, size_ldrfmcbdctitle_cfg, "LDR_FMCBD-1.966", "title.cfg", mcport);
+    retorno = write_embed(&ldrfmcbdtitle_cfg, size_ldrfmcbdtitle_cfg, "LDR_FMCBD-1.966", "title.cfg", mcport);
     if (retorno < 0)
     {
         return 6;
