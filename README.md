@@ -1,4 +1,19 @@
 # OpenTuna Installer Remapped Mod
+OpenTuna has 3 variations dependent upon ROM versions, it is crucial to run the installer to ensure the proper OpenTuna is used on your console.
+This applies for all Tunas. FORTUNA and FUNTUNA only support slims, and FUNTUNA FORK (uses OpenTuna) and OpenTuna has 2 additional versions for varrying FAT models.
+Do not use Tuna from one console on another, the ROM variations can corrupt the card.
+Slim installed OpenTuna can work on other Slims, but Fat Tunas have 2 variations. It is only safe to share a slim tuna with other slims. Do not mix and match tunas with different models. Keep slims on slims, and for fats use the installer each time you need it on another console model. Yes, your 39k and 50k may have varrying OpenTuna requirements. Don't risk it. Run the installer.
+
+**Can I install OpenTuna Slim ontop of my System Update Exploit so one card can work on every console?**
+* NO. If you insert OpenTuna for Slim into a FAT console, you risk corrupting the card.
+* NO. If you insert OpenTuna for FAT 170 into any other rom variant, you risk corrupting the card.
+* NO. If you insert OpenTuna for non 170 FATs into a a slim or 170 FAT, you risk corrupting the card.
+* ALMOST. If you are only dealing with slims and there are no FAT consoles, you can have best of both worlds across all slims.
+
+**Can I add OpenTuna to my FMCB or PS2BBL installation?**
+* Yes, but it will change settings in your FREEMCB.CNF, CONFIG.INI, and PS2BBL.INI. You may also lose applications or other settings if they reside in the removed/overwritten folders by the installer. A better option for *adding tuna* to an existing FMCB/PS2BBL installation, would be to run the [OpenTuna-Addon-Installer-Remapped](), which only installs `mc?:/OPENTUNA/icon.icn` and `mc?:/OPENTUNA/icon.sys` thus preserving any of your settings or applications. Keep in mind, OPENTUNA is hardset to boot `mc?:/BOOT/BOOT.ELF` - if there is nothing there, it will either freeze or take you back to the browser screen.
+
+**Getting started**
 * FMCB w/PS2BBL for any Tuna, FMCB, PS2BBL, or FHDB user. `OpenTuna will not work on HDDOSD/Browser 2.0`
 * Should be compatible with modchips and pretty much anything after model SCPH-18000
 * If you need a place to start, check out [FreeDVDBoot](https://github.com/ps2homebrew/FreeDVDBoot), [PFS-BatchKit-Manager](https://github.com/GDX-X/PFS-BatchKit-Manager), [PS2HDH](https://www.psx-place.com/resources/ps2-hdd-decryption-helper.1507/), or [HDL-Batch-Installer](https://github.com/israpps/HDL-Batch-installer) for ways to get access to wLaunchELF to run OpenTuna-Installer-Remapped Mod.
