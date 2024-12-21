@@ -143,6 +143,36 @@ extern int size_sysconfsysconf_icn;
 extern u8 sysconftitle_cfg[];
 extern int size_sysconftitle_cfg;
 //----------------------------------------//
+extern u8 title_cfg[];
+extern int size_title_cfg;
+//----------------------------------------//
+extern u8 ldrfmcbdctitle_cfg[];
+extern int size_ldrfmcbdctitle_cfg;
+//----------------------------------------//
+extern u8 ldrfmcbdicon_sys[];
+extern int size_ldrfmcbdicon_sys;
+//----------------------------------------//
+extern u8 ldrfmcbdfmcb_icn[];
+extern int size_ldrfmcbdfmcb_icn;
+//----------------------------------------//
+extern u8 ldrfmcbddel_icn[];
+extern int size_ldrfmcbddel_icn;
+//----------------------------------------//
+extern u8 ldrfmcbdcopy_icn[];
+extern int size_ldrfmcbdcopy_icn;
+//----------------------------------------//
+extern u8 fmcbcfgcopy_icn[];
+extern int size_fmcbcfgcopy_icn;
+//----------------------------------------//
+extern u8 fmcbcfgdel_icn[];
+extern int size_fmcbcfgdel_icn;
+//----------------------------------------//
+extern u8 fmcbcfgicon_sys[];
+extern int size_fmcbcfgicon_sys;
+//----------------------------------------//
+extern u8 fmcbcfglist_icn[];
+extern int size_fmcbcfglist_icn;
+//----------------------------------------//
 
 // Embedded IOP drivers
 extern unsigned char SIO2MAN_irx[];
@@ -329,20 +359,22 @@ static int install(int mcport, int icon_variant)
 	}
    sprintf(temp_path,"mc%u:BOOT", mcport);
 	   DeleteFolder(temp_path);
+   sprintf(temp_path,"mc%u:LDR_FMCBD-1.966", mcport);
+	   DeleteFolder(temp_path);
+   sprintf(temp_path,"mc%u:SYS_FMCBCFG", mcport);
+	   DeleteFolder(temp_path);
     sprintf(temp_path,"mc%u:FORTUNA", mcport);
 		DeleteFolder(temp_path);
 	sprintf(temp_path,"mc%u:OPENTUNA", mcport);
 		DeleteFolder(temp_path);
-    // Delete "SYS-CONF" folder
 sprintf(temp_path, "mc%u:SYS-CONF", mcport);
 DeleteFolder(temp_path);
-// Delete "BXEXEC-FUNTUNA" folder
+sprintf(temp_path, "mc%u:FUNTUNA-FORK", mcport);
+DeleteFolder(temp_path);
 sprintf(temp_path, "mc%u:BXEXEC-FUNTUNA", mcport);
 DeleteFolder(temp_path);
-// Delete "FUNTUNA" folder
 sprintf(temp_path, "mc%u:FUNTUNA", mcport);
 DeleteFolder(temp_path);
-// Delete "BXEXEC-OPENTUNA" folder
 sprintf(temp_path, "mc%u:BXEXEC-OPENTUNA", mcport);
 DeleteFolder(temp_path);
     
@@ -374,6 +406,10 @@ DeleteFolder(temp_path);
 	ret = mcMkDir(mcport, 0, "SYS-CONF");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "BOOT");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "LDR_FMCBD-1.966");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "SYS_FMCBCFG");
 	mcSync(0, NULL, &ret);
 	retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
@@ -418,7 +454,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "BOOT", "FMCBD.ELF", mcport);
+    retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "LDR_FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -459,7 +495,7 @@ DeleteFolder(temp_path);
         return 6;
     }
     // Adding sysconf items
-    retorno = write_embed(&sysconffmcb_cfg_elf, size_sysconffmcb_cfg_elf, "SYS-CONF", "FMCB_CFG.ELF", mcport);
+    retorno = write_embed(&sysconffmcb_cfg_elf, size_sysconffmcb_cfg_elf, "SYS_FMCBCFG", "FMCBCFG.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -520,6 +556,56 @@ DeleteFolder(temp_path);
         return 6;
     }
     retorno = write_embed(&sysconftitle_cfg, size_sysconftitle_cfg, "SYS-CONF", "title.cfg", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+        retorno = write_embed(&title_cfg, size_title_cfg, "BOOT", "title.cfg", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&ldrfmcbdctitle_cfg, size_ldrfmcbdctitle_cfg, "LDR_FMCBD-1.966", "title.cfg, mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&ldrfmcbdicon_sys, size_ldrfmcbdicon_sys, "LDR_FMCBD-1.966", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&ldrfmcbdfmcb_icn, size_ldrfmcbdfmcb_icn, "LDR_FMCBD-1.966", "FMCB.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&ldrfmcbddel_icn, size_ldrfmcbddel_icn, "LDR_FMCBD-1.966", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&ldrfmcbdcopy_icn, size_ldrfmcbdcopy_icn, "LDR_FMCBD-1.966", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbcfgcopy_icn, size_fmcbcfgcopy_icn, "SYS_FMCBCFG", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbcfgdel_icn, size_fmcbcfgdel_icn, "SYS_FMCBCFG", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbcfgicon_sys, size_fmcbcfgicon_sys, "SYS_FMCBCFG", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbcfglist_icn, size_fmcbcfglist_icn, "SYS_FMCBCFG", "list.icn", mcport);
     if (retorno < 0)
     {
         return 6;
