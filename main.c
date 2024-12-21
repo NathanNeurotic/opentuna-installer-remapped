@@ -565,7 +565,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdctitle_cfg, size_ldrfmcbdctitle_cfg, "LDR_FMCBD-1.966", "title.cfg, mcport);
+    retorno = write_embed(&ldrfmcbdctitle_cfg, size_ldrfmcbdctitle_cfg, "LDR_FMCBD-1.966", "title.cfg", mcport);
     if (retorno < 0)
     {
         return 6;
