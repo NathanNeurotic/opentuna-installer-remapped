@@ -3,9 +3,9 @@ EE_BIN_PACKED = OpenTuna_Installer.elf
 EE_BIN_STRIPPED = stripped.elf
 EE_OBJS = main.o gs.o pad.o  gs_asm.o ps2_asm.o dma_asm.o
 EE_OBJS += title_cfg.o launchelf_cnf.o ipconfig_dat.o esr_elf.o fmcbd_elf.o boot2_elf.o boot_elf.o icon_sys.o copy_icn.o del_icn.o boot_icn.o config_ini.o OpenTuna_sys.o OpenTuna_SLIMS.o OpenTuna_FAT-170.o OpenTuna_FAT-110-120-150-160.o PADMAN_irx.o SIO2MAN_irx.o MCMAN_irx.o MCSERV_irx.o \
-           ldrfmcbdctitle_cfg.o ldrfmcbdicon_sys.o ldrfmcbdfmcb_icn.o ldrfmcbddel_icn.o ldrfmcbdcopy_icn.o fmcbcfgcopy_icn.o fmcbcfgdel_icn.o fmcbcfgicon_sys.o fmcbcfglist_icn.o sysconffmcb_cfg_elf.o sysconffreemcb_cnf.o sysconfipconfig_dat.o sysconflaunchelf_cnf.o sysconfps2bbl_ini.o sysconfusbd_irx.o sysconfusbhdfsd_irx.o sysconfcopy_icn.o sysconfdel_icn.o sysconfendvdpl_irx.o sysconficon_sys.o sysconfsysconf_icn.o sysconftitle_cfg.o
+           ldrfmcbdtitle_cfg.o ldrfmcbdicon_sys.o ldrfmcbdfmcb_icn.o ldrfmcbddel_icn.o ldrfmcbdcopy_icn.o fmcbcfgcopy_icn.o fmcbcfgdel_icn.o fmcbcfgicon_sys.o fmcbcfglist_icn.o sysconffmcb_cfg_elf.o sysconffreemcb_cnf.o sysconfipconfig_dat.o sysconflaunchelf_cnf.o sysconfps2bbl_ini.o sysconfusbd_irx.o sysconfusbhdfsd_irx.o sysconfcopy_icn.o sysconfdel_icn.o sysconfendvdpl_irx.o sysconficon_sys.o sysconfsysconf_icn.o sysconftitle_cfg.o
 EE_SRC = title_cfg.s launchelf_cnf.s ipconfig_dat.s esr_elf.s fmcbd_elf.s boot2_elf.s boot_elf.s icon_sys.s copy_icn.s del_icn.s boot_icn.s config_ini.s OpenTuna_sys.s  OpenTuna_SLIMS.s OpenTuna_FAT-170.s OpenTuna_FAT-110-120-150-160.s PADMAN_irx.c SIO2MAN_irx.c MCMAN_irx.c MCSERV_irx.c \
-      ldrfmcbdctitle_cfg.s ldrfmcbdicon_sys.s ldrfmcbdfmcb_icn.s ldrfmcbddel_icn.s ldrfmcbdcopy_icn.s fmcbcfgcopy_icn.s fmcbcfgdel_icn.s fmcbcfgicon_sys.s fmcbcfglist_icn.s sysconffmcb_cfg_elfs sysconffreemcb_cnf.s sysconfipconfig_dat.s sysconflaunchelf_cnf.s sysconfps2bbl_ini.s sysconfusbd_irx.s sysconfusbhdfsd_irx.s sysconfcopy_icn.s sysconfdel_icn.s sysconfendvdpl_irx.s sysconficon_sys.s sysconfsysconf_icn.s sysconftitle_cfg.s
+      ldrfmcbdtitle_cfg.s ldrfmcbdicon_sys.s ldrfmcbdfmcb_icn.s ldrfmcbddel_icn.s ldrfmcbdcopy_icn.s fmcbcfgcopy_icn.s fmcbcfgdel_icn.s fmcbcfgicon_sys.s fmcbcfglist_icn.s sysconffmcb_cfg_elfs sysconffreemcb_cnf.s sysconfipconfig_dat.s sysconflaunchelf_cnf.s sysconfps2bbl_ini.s sysconfusbd_irx.s sysconfusbhdfsd_irx.s sysconfcopy_icn.s sysconfdel_icn.s sysconfendvdpl_irx.s sysconficon_sys.s sysconfsysconf_icn.s sysconftitle_cfg.s
 	   
 EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 
@@ -23,7 +23,7 @@ ldrfmcbdfmcb_icn.s:
 ldrfmcbdicon_sys.s:
 	bin2s INSTALL/LDR_FMCBD-1.966/ICON.SYS ldrfmcbdicon_sys.s ldrfmcbdicon_sys
 
-ldrfmcbdctitle_cfg.s:
+ldrfmcbdtitle_cfg.s:
 	bin2s INSTALL/LDR_FMCBD-1.966/TITLE.CFG ldrfmcbdtitle_cfg.s ldrfmcbdtitle_cfg
 
 title_cfg.s:
