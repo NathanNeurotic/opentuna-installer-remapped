@@ -71,39 +71,6 @@ extern int size_opentuna_fat170;
 extern u8 opentuna_sys[];
 extern int size_opentuna_sys;
 //----------------------------------------//
-extern u8 fmcbd_elf[];
-extern int size_fmcbd_elf;
-//----------------------------------------//
-extern u8 boot2_elf[];
-extern int size_boot2_elf;
-//----------------------------------------//
-extern u8 boot_icn[];
-extern int size_boot_icn;
-//----------------------------------------//
-extern u8 icon_sys[];
-extern int size_icon_sys;
-//----------------------------------------//
-extern u8 copy_icn[];
-extern int size_copy_icn;
-//----------------------------------------//
-extern u8 del_icn[];
-extern int size_del_icn;
-//----------------------------------------//
-extern u8 config_ini[];
-extern int size_config_ini;
-//----------------------------------------//
-extern u8 boot_elf[];
-extern int size_boot_elf;
-//----------------------------------------//
-extern u8 launchelf_cnf[];
-extern int size_launchelf_cnf;
-//----------------------------------------//
-extern u8 esr_elf[];
-extern int size_esr_elf;
-//----------------------------------------//
-extern u8 ipconfig_dat[];
-extern int size_ipconfig_dat;
-//----------------------------------------//
 
 // Embedded IOP drivers
 extern unsigned char SIO2MAN_irx[];
@@ -288,7 +255,13 @@ static int install(int mcport, int icon_variant)
 	{
 		return 3;
 	}
-   sprintf(temp_path,"mc%u:BOOT", mcport);
+   sprintf(temp_path,"mc%u:FUNTUNA", mcport);
+	   DeleteFolder(temp_path);
+       sprintf(temp_path,"mc%u:FUNTUNA-FORK", mcport);
+	   DeleteFolder(temp_path);
+       sprintf(temp_path,"mc%u:BXEXEC-FUNTUNA", mcport);
+	   DeleteFolder(temp_path);
+       sprintf(temp_path,"mc%u:BXEXEC-OPENTUNA", mcport);
 	   DeleteFolder(temp_path);
     sprintf(temp_path,"mc%u:FORTUNA", mcport);
 		DeleteFolder(temp_path);
@@ -320,8 +293,6 @@ static int install(int mcport, int icon_variant)
 	}
 	ret = mcMkDir(mcport, 0, "OPENTUNA");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "BOOT");
-	mcSync(0, NULL, &ret);
 	retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
 	{
@@ -349,61 +320,7 @@ static int install(int mcport, int icon_variant)
 
 	ret = write(fd, ICONTYPE_ALIAS[icon_variant], 4);//This will allow identifying the hacked icon variant without risking your mc contents
 	close(fd);
-	}
-	    retorno = write_embed(&boot_elf, size_boot_elf, "BOOT", "BOOT.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&boot2_elf, size_boot2_elf, "BOOT", "BOOT2.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&icon_sys, size_icon_sys, "BOOT", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "BOOT", "FMCBD.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&copy_icn, size_copy_icn, "BOOT", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&del_icn, size_del_icn, "BOOT", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&boot_icn, size_boot_icn, "BOOT", "BOOT.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&launchelf_cnf, size_launchelf_cnf, "BOOT", "LAUNCHELF.CNF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "ESR.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&ipconfig_dat, size_ipconfig_dat, "BOOT", "IPCONFIG.DAT", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&config_ini, size_config_ini, "BOOT", "CONFIG.INI", mcport);
-    if (retorno < 0)
-    {
-        return 6;
+	
 	}
 
 	PRINTF("installation finished\n");
