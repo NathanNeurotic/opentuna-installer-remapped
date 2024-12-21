@@ -555,11 +555,6 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&sysconftitle_cfg, size_sysconftitle_cfg, "SYS-CONF", "title.cfg", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
         retorno = write_embed(&title_cfg, size_title_cfg, "BOOT", "title.cfg", mcport);
     if (retorno < 0)
     {
