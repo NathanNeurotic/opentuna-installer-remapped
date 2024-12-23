@@ -34,10 +34,10 @@ jobs:
           path: OpenTuna_Installer.elf
 
       - name: Create release
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/OpenTuna-FMCB-Installer'
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          title: "Latest build"
+          automatic_release_tag: "FreeMCBootDecrypted"
+          title: "OpenTuna FMCB Installer - Recommended"
           files: OpenTuna_Installer.elf
