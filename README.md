@@ -1,3 +1,5 @@
+
+![FMCT](https://github.com/user-attachments/assets/528c5349-60e6-4792-a3fd-73b40698f31a)
 # OpenTuna Installer Remapped Mod
 OpenTuna has 3 variations dependent upon ROM versions, it is crucial to run the installer to ensure the proper OpenTuna is used on your console.
 This applies for all Tunas. FORTUNA and FUNTUNA only support slims, and FUNTUNA FORK (uses OpenTuna) and OpenTuna has 2 additional versions for varrying FAT models.
