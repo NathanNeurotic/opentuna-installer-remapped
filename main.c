@@ -353,7 +353,7 @@ static int install(int mcport, int icon_variant)
 	}
 
 	//If there's no free space, we have an error:
-	if (mc_Free < 1727)
+	if (mc_Free < 4000)
 	{
 		return 3;
 	}
