@@ -95,14 +95,8 @@ extern int size_config_ini;
 extern u8 boot_elf[];
 extern int size_boot_elf;
 //----------------------------------------//
-extern u8 launchelf_cnf[];
-extern int size_launchelf_cnf;
-//----------------------------------------//
 extern u8 esr_elf[];
 extern int size_esr_elf;
-//----------------------------------------//
-extern u8 ipconfig_dat[];
-extern int size_ipconfig_dat;
 //----------------------------------------//
 extern u8 sysconffmcb_cfg_elf[];
 extern int size_sysconffmcb_cfg_elf;
@@ -140,14 +134,8 @@ extern int size_sysconficon_sys;
 extern u8 sysconfsysconf_icn[];
 extern int size_sysconfsysconf_icn;
 //----------------------------------------//
-extern u8 sysconftitle_cfg[];
-extern int size_sysconftitle_cfg;
-//----------------------------------------//
 extern u8 title_cfg[];
 extern int size_title_cfg;
-//----------------------------------------//
-extern u8 ldrfmcbdtitle_cfg[];
-extern int size_ldrfmcbdtitle_cfg;
 //----------------------------------------//
 extern u8 ldrfmcbdicon_sys[];
 extern int size_ldrfmcbdicon_sys;
@@ -359,9 +347,13 @@ static int install(int mcport, int icon_variant)
 	}
    sprintf(temp_path,"mc%u:BOOT", mcport);
 	   DeleteFolder(temp_path);
+   sprintf(temp_path,"mc%u:APPS", mcport);
+	   DeleteFolder(temp_path);
    sprintf(temp_path,"mc%u:LDR_FMCBD-1.966", mcport);
 	   DeleteFolder(temp_path);
    sprintf(temp_path,"mc%u:SYS_FMCBCFG", mcport);
+	   DeleteFolder(temp_path);
+   sprintf(temp_path,"mc%u:SYS_FMCB-CFG", mcport);
 	   DeleteFolder(temp_path);
     sprintf(temp_path,"mc%u:FORTUNA", mcport);
 		DeleteFolder(temp_path);
@@ -407,9 +399,19 @@ DeleteFolder(temp_path);
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "BOOT");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "LDR_FMCBD-1.966");
+	ret = mcMkDir(mcport, 0, "FMCBD-1.966");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "SYS_FMCBCFG");
+	ret = mcMkDir(mcport, 0, "FMCBD-1.9536");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "FMCBD-1.8C");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "SYS_FMCB-CFG");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "APPS");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "POWEROFF");
+	mcSync(0, NULL, &ret);
+	ret = mcMkDir(mcport, 0, "RESTART");
 	mcSync(0, NULL, &ret);
 	retorno = -12; ///to ensure installation quits if none of the hacked icons are written
 	if (icon_variant == SLIMS)
@@ -454,7 +456,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "LDR_FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
+    retorno = write_embed(&fmcbd_elf, size_fmcbd_elf, "FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -474,17 +476,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&launchelf_cnf, size_launchelf_cnf, "BOOT", "LAUNCHELF.CNF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
     retorno = write_embed(&esr_elf, size_esr_elf, "BOOT", "ESR.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&ipconfig_dat, size_ipconfig_dat, "BOOT", "IPCONFIG.DAT", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -495,7 +487,7 @@ DeleteFolder(temp_path);
         return 6;
     }
     // Adding sysconf items
-    retorno = write_embed(&sysconffmcb_cfg_elf, size_sysconffmcb_cfg_elf, "SYS_FMCBCFG", "FMCBCFG.ELF", mcport);
+    retorno = write_embed(&sysconffmcb_cfg_elf, size_sysconffmcb_cfg_elf, "SYS_FMCB-CFG", "FMCB-CFG.ELF", mcport);
     if (retorno < 0)
     {
         return 6;
@@ -555,52 +547,47 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-        retorno = write_embed(&title_cfg, size_title_cfg, "BOOT", "title.cfg", mcport);
+    retorno = write_embed(&ldrfmcbdicon_sys, size_ldrfmcbdicon_sys, "FMCBD-1.966", "icon.sys", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdtitle_cfg, size_ldrfmcbdtitle_cfg, "LDR_FMCBD-1.966", "title.cfg", mcport);
+    retorno = write_embed(&ldrfmcbdfmcb_icn, size_ldrfmcbdfmcb_icn, "FMCBD-1.966", "FMCB.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdicon_sys, size_ldrfmcbdicon_sys, "LDR_FMCBD-1.966", "icon.sys", mcport);
+    retorno = write_embed(&ldrfmcbddel_icn, size_ldrfmcbddel_icn, "FMCBD-1.966", "del.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdfmcb_icn, size_ldrfmcbdfmcb_icn, "LDR_FMCBD-1.966", "FMCB.icn", mcport);
+    retorno = write_embed(&ldrfmcbdcopy_icn, size_ldrfmcbdcopy_icn, "FMCBD-1.966", "copy.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbddel_icn, size_ldrfmcbddel_icn, "LDR_FMCBD-1.966", "del.icn", mcport);
+    retorno = write_embed(&fmcbcfgcopy_icn, size_fmcbcfgcopy_icn, "SYS_FMCB-CFG", "copy.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&ldrfmcbdcopy_icn, size_ldrfmcbdcopy_icn, "LDR_FMCBD-1.966", "copy.icn", mcport);
+    retorno = write_embed(&fmcbcfgdel_icn, size_fmcbcfgdel_icn, "SYS_FMCB-CFG", "del.icn", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&fmcbcfgcopy_icn, size_fmcbcfgcopy_icn, "SYS_FMCBCFG", "copy.icn", mcport);
+    retorno = write_embed(&fmcbcfgicon_sys, size_fmcbcfgicon_sys, "SYS_FMCB-CFG", "icon.sys", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&fmcbcfgdel_icn, size_fmcbcfgdel_icn, "SYS_FMCBCFG", "del.icn", mcport);
+    retorno = write_embed(&title_cfg, size_title_cfg, "SYS_FMCB-CFG", "title.cfg", mcport);
     if (retorno < 0)
     {
         return 6;
     }
-    retorno = write_embed(&fmcbcfgicon_sys, size_fmcbcfgicon_sys, "SYS_FMCBCFG", "icon.sys", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbcfglist_icn, size_fmcbcfglist_icn, "SYS_FMCBCFG", "list.icn", mcport);
+    retorno = write_embed(&fmcbcfglist_icn, size_fmcbcfglist_icn, "SYS_FMCB-CFG", "list.icn", mcport);
     if (retorno < 0)
     {
         return 6;
