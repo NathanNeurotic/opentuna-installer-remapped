@@ -12,34 +12,22 @@ EE_LIBS = -ldebug -lcdvd -lpatches -lpadx -lmc
 all:
 	$(MAKE) $(EE_BIN_PACKED)
 ldrfmcbdcopy_icn.s:
-	bin2s INSTALL/LDR_FMCBD-1.966/COPY.ICN ldrfmcbdcopy_icn.s ldrfmcbdcopy_icn
+	bin2s INSTALL/FMCBD-1.966/COPY.ICN ldrfmcbdcopy_icn.s ldrfmcbdcopy_icn
 
 ldrfmcbddel_icn.s:
-	bin2s INSTALL/LDR_FMCBD-1.966/DEL.ICN ldrfmcbddel_icn.s ldrfmcbddel_icn
+	bin2s INSTALL/FMCBD-1.966/DEL.ICN ldrfmcbddel_icn.s ldrfmcbddel_icn
 
 ldrfmcbdfmcb_icn.s:
-	bin2s INSTALL/LDR_FMCBD-1.966/FMCB.ICN ldrfmcbdfmcb_icn.s ldrfmcbdfmcb_icn
+	bin2s INSTALL/FMCBD-1.966/FMCB.ICN ldrfmcbdfmcb_icn.s ldrfmcbdfmcb_icn
 
 ldrfmcbdicon_sys.s:
-	bin2s INSTALL/LDR_FMCBD-1.966/ICON.SYS ldrfmcbdicon_sys.s ldrfmcbdicon_sys
-
-ldrfmcbdtitle_cfg.s:
-	bin2s INSTALL/LDR_FMCBD-1.966/TITLE.CFG ldrfmcbdtitle_cfg.s ldrfmcbdtitle_cfg
-
-title_cfg.s:
-	bin2s INSTALL/BOOT/TITLE.CFG title_cfg.s title_cfg
-
-launchelf_cnf.s:
-	bin2s INSTALL/BOOT/LAUNCHELF.CNF launchelf_cnf.s launchelf_cnf
-
-ipconfig_dat.s:
-	bin2s INSTALL/BOOT/IPCONFIG.DAT ipconfig_dat.s ipconfig_dat
+	bin2s INSTALL/FMCBD-1.966/ICON.SYS ldrfmcbdicon_sys.s ldrfmcbdicon_sys
 
 esr_elf.s:
 	bin2s INSTALL/BOOT/ESR.ELF esr_elf.s esr_elf
 
 fmcbd_elf.s:
-	bin2s INSTALL/LDR_FMCBD-1.966/FMCBD-1.966.ELF fmcbd_elf.s fmcbd_elf
+	bin2s INSTALL/FMCBD-1.966/FMCBD-1.966.ELF fmcbd_elf.s fmcbd_elf
 
 boot2_elf.s:
 	bin2s INSTALL/BOOT/BOOT2.ELF boot2_elf.s boot2_elf
@@ -63,19 +51,19 @@ config_ini.s:
 	bin2s INSTALL/BOOT/CONFIG.INI config_ini.s config_ini
 
 sysconffmcb_cfg_elf.s:
-	bin2s INSTALL/SYS_FMCBCFG/FMCBCFG.ELF sysconffmcb_cfg_elf.s sysconffmcb_cfg_elf
+	bin2s INSTALL/SYS_FMCB-CFG/FMCB-CFG.ELF sysconffmcb_cfg_elf.s sysconffmcb_cfg_elf
 
 fmcbcfgcopy_icn.s:
-	bin2s INSTALL/SYS_FMCBCFG/COPY.ICN fmcbcfgcopy_icn.s fmcbcfgcopy_icn
+	bin2s INSTALL/SYS_FMCB-CFG/COPY.ICN fmcbcfgcopy_icn.s fmcbcfgcopy_icn
 
 fmcbcfgdel_icn.s:
-	bin2s INSTALL/SYS_FMCBCFG/DEL.ICN fmcbcfgdel_icn.s fmcbcfgdel_icn
+	bin2s INSTALL/SYS_FMCB-CFG/DEL.ICN fmcbcfgdel_icn.s fmcbcfgdel_icn
 
 fmcbcfgicon_sys.s:
-	bin2s INSTALL/SYS_FMCBCFG/ICON.SYS fmcbcfgicon_sys.s fmcbcfgicon_sys
+	bin2s INSTALL/SYS_FMCB-CFG/ICON.SYS fmcbcfgicon_sys.s fmcbcfgicon_sys
 
 fmcbcfglist_icn.s:
-	bin2s INSTALL/SYS_FMCBCFG/LIST.ICN fmcbcfglist_icn.s fmcbcfglist_icn
+	bin2s INSTALL/SYS_FMCB-CFG/LIST.ICN fmcbcfglist_icn.s fmcbcfglist_icn
 
 sysconffreemcb_cnf.s:
 	bin2s INSTALL/SYS-CONF/FREEMCB.CNF sysconffreemcb_cnf.s sysconffreemcb_cnf
@@ -111,7 +99,7 @@ sysconfsysconf_icn.s:
 	bin2s INSTALL/SYS-CONF/SYSCONF.ICN sysconfsysconf_icn.s sysconfsysconf_icn
 
 sysconftitle_cfg.s:
-	bin2s INSTALL/SYS_FMCBCFG/TITLE.CFG sysconftitle_cfg.s sysconftitle_cfg
+	bin2s INSTALL/SYS_FMCB-CFG/TITLE.CFG sysconftitle_cfg.s sysconftitle_cfg
 
 OpenTuna_sys.s:
 	bin2s INSTALL/OPENTUNA/icon.sys OpenTuna_sys.s opentuna_sys
