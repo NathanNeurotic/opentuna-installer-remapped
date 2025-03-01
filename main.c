@@ -710,27 +710,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&fmcbdninesixcopy_icn, size_fmcbdninesixcopy_icn, "FMCBD-1.966", "copy.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninesixdel_icn, size_fmcbdninesixdel_icn, "FMCBD-1.966", "del.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninesix_icn, size_fmcbdninesix_icn, "FMCBD-1.966", "FMCB.icn", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
     retorno = write_embed(&fmcbdninesix_elf, size_fmcbdninesix_elf, "FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
-    if (retorno < 0)
-    {
-        return 6;
-    }
-    retorno = write_embed(&fmcbdninesixicon_sys, size_fmcbdninesixicon_sys, "FMCBD-1.966", "icon.sys", mcport);
     if (retorno < 0)
     {
         return 6;
