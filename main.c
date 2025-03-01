@@ -479,7 +479,7 @@ DeleteFolder(temp_path);
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "FMCBD-1.966");
 	mcSync(0, NULL, &ret);
-	ret = mcMkDir(mcport, 0, "FMCBD-1.9536");
+	ret = mcMkDir(mcport, 0, "FMCBD-1.953");
 	mcSync(0, NULL, &ret);
 	ret = mcMkDir(mcport, 0, "FMCBD-1.8C");
 	mcSync(0, NULL, &ret);
