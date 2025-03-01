@@ -750,7 +750,7 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
-    retorno = write_embed(&fmcbdeight_icn, size_fmcbdeight_icn, "FMCBD-1.8C", "FMCBD.icn", mcport);
+    retorno = write_embed(&fmcbdeight_icn, size_fmcbdeight_icn, "FMCBD-1.8C", "FMCB.icn", mcport);
     if (retorno < 0)
     {
         return 6;
