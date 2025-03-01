@@ -161,6 +161,84 @@ extern int size_fmcbcfgicon_sys;
 extern u8 fmcbcfglist_icn[];
 extern int size_fmcbcfglist_icn;
 //----------------------------------------//
+extern u8 restartdel_icn[];
+extern int size_restartdel_icn;
+//----------------------------------------//
+extern u8 restarticon_sys[];
+extern int size_restarticon_sys;
+//----------------------------------------//
+extern u8 restartlist_icn[];
+extern int size_restartlist_icn;
+//----------------------------------------//
+extern u8 restart_elf[];
+extern int size_restart_elf;
+//----------------------------------------//
+extern u8 powerdel_icn[];
+extern int size_powerdel_icn;
+//----------------------------------------//
+extern u8 powericon_sys[];
+extern int size_powericon_sys;
+//----------------------------------------//
+extern u8 powerlist_icn[];
+extern int size_powerlist_icn;
+//----------------------------------------//
+extern u8 poweroff_elf[];
+extern int size_poweroff_elf;
+//----------------------------------------//
+extern u8 fmcbdninesixcopy_icn[];
+extern int size_fmcbdninesixcopy_icn;
+//----------------------------------------//
+extern u8 fmcbdninesixdel_icn[];
+extern int size_fmcbdninesixdel_icn;
+//----------------------------------------//
+extern u8 fmcbdninesix_icn[];
+extern int size_fmcbdninesix_icn;
+//----------------------------------------//
+extern u8 fmcbdninesix_elf[];
+extern int size_fmcbdninesix_elf;
+//----------------------------------------//
+extern u8 fmcbdninesixicon_sys[];
+extern int size_fmcbdninesixicon_sys;
+//----------------------------------------//
+extern u8 fmcbdninefivecopy_icn[];
+extern int size_fmcbdninefivecopy_icn;
+//----------------------------------------//
+extern u8 fmcbdninefivedel_icn[];
+extern int size_fmcbdninefivedel_icn;
+//----------------------------------------//
+extern u8 fmcbdninefive_icn[];
+extern int size_fmcbdninefive_icn;
+//----------------------------------------//
+extern u8 fmcbdninefive_elf[];
+extern int size_fmcbdninefive_elf;
+//----------------------------------------//
+extern u8 fmcbdninefiveicon_sys[];
+extern int size_fmcbdninefiveicon_sys;
+//----------------------------------------//
+extern u8 fmcbdeightcopy_icn[];
+extern int size_fmcbdeightcopy_icn;
+//----------------------------------------//
+extern u8 fmcbdeightdel_icn[];
+extern int size_fmcbdeightdel_icn;
+//----------------------------------------//
+extern u8 fmcbdeight_icn[];
+extern int size_fmcbdeight_icn;
+//----------------------------------------//
+extern u8 fmcbdeight_elf[];
+extern int size_fmcbdeight_elf;
+//----------------------------------------//
+extern u8 fmcbdeighticon_sys[];
+extern int size_fmcbdeighticon_sys;
+//----------------------------------------//
+extern u8 apps_icn[];
+extern int size_apps_icn;
+//----------------------------------------//
+extern u8 appsdel_icn[];
+extern int size_appsdel_icn;
+//----------------------------------------//
+extern u8 appsicon_sys[];
+extern int size_appsicon_sys;
+//----------------------------------------//
 
 // Embedded IOP drivers
 extern unsigned char SIO2MAN_irx[];
@@ -592,6 +670,137 @@ DeleteFolder(temp_path);
     {
         return 6;
     }
+        retorno = write_embed(&restartdel_icn, size_restartdel_icn, "RESTART", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&restarticon_sys, size_restarticon_sys, "RESTART", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&restartlist_icn, size_restartlist_icn, "RESTART", "list.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&restart_elf, size_restart_elf, "RESTART", "RESTART.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&powerdel_icn, size_powerdel_icn, "POWEROFF", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&powericon_sys, size_powericon_sys, "POWEROFF", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&powerlist_icn, size_powerlist_icn, "POWEROFF", "list.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&poweroff_elf, size_poweroff_elf, "POWEROFF", "POWEROFF.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninesixcopy_icn, size_fmcbdninesixcopy_icn, "FMCBD-1.966", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninesixdel_icn, size_fmcbdninesixdel_icn, "FMCBD-1.966", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninesix_icn, size_fmcbdninesix_icn, "FMCBD-1.966", "FMCB.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninesix_elf, size_fmcbdninesix_elf, "FMCBD-1.966", "FMCBD-1.966.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninesixicon_sys, size_fmcbdninesixicon_sys, "FMCBD-1.966", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninefivecopy_icn, size_fmcbdninefivecopy_icn, "FMCBD-1.953", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninefivedel_icn, size_fmcbdninefivedel_icn, "FMCBD-1.953", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninefive_icn, size_fmcbdninefive_icn, "FMCBD-1.953", "FMCB.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninefive_elf, size_fmcbdninefive_elf, "FMCBD-1.953", "FMCBD-1.953.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdninefiveicon_sys, size_fmcbdninefiveicon_sys, "FMCBD-1.953", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdeightcopy_icn, size_fmcbdeightcopy_icn, "FMCBD-1.8C", "copy.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdeightdel_icn, size_fmcbdeightdel_icn, "FMCBD-1.8C", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdeight_icn, size_fmcbdeight_icn, "FMCBD-1.8C", "FMCBD.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdeight_elf, size_fmcbdeight_elf, "FMCBD-1.8C", "FMCBD-1.8C.ELF", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&fmcbdeighticon_sys, size_fmcbdeighticon_sys, "FMCBD-1.8C", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&apps_icn, size_apps_icn, "APPS", "APPS.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&appsdel_icn, size_appsdel_icn, "APPS", "del.icn", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+    retorno = write_embed(&appsicon_sys, size_appsicon_sys, "APPS", "icon.sys", mcport);
+    if (retorno < 0)
+    {
+        return 6;
+    }
+
 
 	PRINTF("installation finished\n");
 
